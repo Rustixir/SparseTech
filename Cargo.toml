@@ -1,0 +1,17 @@
+[package]
+name = "sparse_tech"
+version = "1.0.0"
+edition = "2021"
+author = "danyalmhai@gmail.com"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4.17"
+tokio = {version="1.19.2", features=["rt-multi-thread", "macros", "sync", "time"]}
+tokio-tungstenite = "0.17.2"
+serde = "1.0.139"
+serde_derive = "1.0.139"
+serde_json = "1.0.82"
+futures-util = "0.3.21"
+url = "2.2.2"

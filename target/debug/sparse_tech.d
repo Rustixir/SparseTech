@@ -1,0 +1,1 @@
+/home/ai/Documents/Rust/sparse_tech/target/debug/sparse_tech: /home/ai/Documents/Rust/sparse_tech/src/client.rs /home/ai/Documents/Rust/sparse_tech/src/cmd.rs /home/ai/Documents/Rust/sparse_tech/src/main.rs /home/ai/Documents/Rust/sparse_tech/src/server/service.rs /home/ai/Documents/Rust/sparse_tech/src/server/transport.rs /home/ai/Documents/Rust/sparse_tech/src/server.rs
