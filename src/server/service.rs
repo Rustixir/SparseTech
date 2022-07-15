@@ -5,15 +5,6 @@ use serde_derive::{Serialize, Deserialize};
 
 
 
-pub trait SparseSerivce {
-    
-    fn subscribe(&self);
-    fn unsubscribe(&self);
-    fn handle_request(&self, req: RequestServerInfoField) -> ResponseServerInfoField;
-
-}
-
-
 pub struct SparseSvc {
     clients: AtomicU64
 }
