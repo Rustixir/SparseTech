@@ -46,15 +46,18 @@ impl SparseSvc {
                         }
                         _ => {
                             ResponseServerInfoField {
-                                response: Response::GetServerInfo,
+                                response: Response::ServiceError,
                                 data_response: DataResponse::Code { code: "InvalidFieldName".to_string() },
                                 reply_to: req.reply_to
                             }
                         }
                     }
                 } else {
-                    // Never Happen
-                    todo!()
+                    ResponseServerInfoField {
+                        response: Response::ServiceError,
+                        data_response: DataResponse::Code { code: "BadRequest".to_string() },
+                        reply_to: req.reply_to
+                    }
                 }
             }
         }
