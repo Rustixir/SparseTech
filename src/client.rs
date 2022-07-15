@@ -17,7 +17,6 @@ impl Client {
         let uri = url::Url::parse(&format!("ws://localhost:{}", port)).unwrap();
         let (socket, _) = connect_async(uri).await.unwrap();
 
-            
         Client {
             socket
         }
@@ -37,8 +36,12 @@ impl Client {
             reply_to: "4b1e4202-94fe-4159-81d5-caa52b379bf1".to_string(),
         };
 
+        let req_3 = RequestServerInfoField {
+            request: crate::server::service::Request::GetServerInfo,
+            data_request: DataRequest::Field { field: "abc".to_string() },
+            reply_to: "15ff134f-dcd7-4b1a-aa32-9e0b2da36dcf".to_string(),
+        };
 
-        let req_3 = r#"{"request": "GetServerInfo", "data_request": {"field": "abc"}, "reply_to": "15ff134f-dcd7-4b1a-aa32-9e0b2da36dcf"}"#;
 
 
         println!("");
@@ -64,7 +67,7 @@ impl Client {
         println!("");
 
 
-        let json = req_3;
+        let json = serde_json::to_string(&req_3).unwrap();
         self.socket.send(Message::Text(json.to_string())).await.unwrap();
         let res = self.socket.next().await.unwrap().unwrap();
         println!(">>> {}", json);
