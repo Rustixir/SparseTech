@@ -12,9 +12,9 @@ pub struct Client {
 
 impl Client {
 
-    pub async fn new(addr: String) -> Self {
+    pub async fn new(port: String) -> Self {
         
-        let uri = url::Url::parse(&format!("ws://localhost:{}", addr)).unwrap();
+        let uri = url::Url::parse(&format!("ws://localhost:{}", port)).unwrap();
         let (socket, _) = connect_async(uri).await.unwrap();
 
             
