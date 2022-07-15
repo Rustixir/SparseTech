@@ -15,8 +15,7 @@ impl Client {
     pub async fn new(addr: String) -> Self {
         
         let uri = url::Url::parse(&format!("ws://localhost:{}", addr)).unwrap();
-        let (socket, _) =  
-                connect_async(uri).await.unwrap();
+        let (socket, _) = connect_async(uri).await.unwrap();
 
             
         Client {
