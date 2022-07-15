@@ -71,6 +71,7 @@ impl Client {
         println!(">>> {}", json);
         println!("<<< {}", res.to_string());
 
+        println!("");
 
         let _ = self.socket.close(None).await;
 
